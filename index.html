@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز الأفكار</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #43cea2, #185a9d);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        button, select, input[type="text"], textarea {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            border: none;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        textarea {
+            height: 100px;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px; /* إضافة مسافة بين الحقول */
+        }
+        @media (min-width: 768px) {
+            .flex-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            button {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- الصفحة الرئيسية -->
+        <div id="homePage" class="page active">
+            <h1>مرحبًا بك في مركز الأفكار</h1>
+            <div class="flex-container">
+                <button onclick="showPage('submitIdeaPage')">تقديم فكرة</button>
+                <button onclick="showPage('aboutPage')">عن البرنامج</button>
+            </div>
+        </div>
+
+        <!-- صفحة تقديم الفكرة -->
+        <div id="submitIdeaPage" class="page">
+            <h1>تقديم فكرة جديدة</h1>
+            <form id="ideaForm" class="form-container">
+                <select id="category" required>
+                    <option value="" disabled selected>اختر الفئة</option>
+                    <option value="تكنولوجيا">تكنولوجيا</option>
+                    <option value="تسويق">تسويق</option>
+                    <option value="تصميم">تصميم</option>
+                    <option value="صحة">صحة</option>
+                    <option value="تعليم">تعليم</option>
+                    <option value="رياضة">رياضة</option>
+                    <option value="أعمال">أعمال</option>
+                    <option value="فن">فن</option>
+                    <option value="سفر">سفر</option>
+                    <option value="أخرى">أخرى</option>
+
+                </select>
+                <input type="text" id="ideaTitle" placeholder="عنوان الفكرة" required>
+                <textarea id="ideaDescription" placeholder="وصف الفكرة" required></textarea>
+                <select id="ideaPrice" required>
+                    <option value="" disabled selected>اختر السعر</option>
+                    <option value="مجاني">مجاني</option>
+                    <option value="3 ريال عماني">3 ريال عماني</option>
+                    <option value="5 ريال عماني">5 ريال عماني</option>
+                    <option value="15 ريال عماني">15 ريال عماني</option>
+                    <option value="25 ريال عماني">25 ريال عماني</option>
+                </select>
+                <input type="text" id="phoneNumber" placeholder="رقم الهاتف" required>
+                <button type="button" onclick="sendIdea()">إرسال الفكرة</button>
+                <button type="button" onclick="showPage('homePage')">العودة إلى الصفحة الرئيسية</button>
+            </form>
+        </div>
+
+        <!-- صفحة تعريفية بالبرنامج -->
+        <div id="aboutPage" class="page">
+            <h1>عن البرنامج</h1>
+            <p>في مركز الأفكار، نُقدم لك منصة مبتكرة وسهلة الاستخدام لتقديم أفكارك وإيصالها إلى المستثمرين والمهتمين.. حيث يمكنك عرض أفكارك الرائعة والحصول على فرصة لبيعها بأسلوب سلس وآمن..</p>
+            <button onclick="showPage('homePage')">العودة إلى الصفحة الرئيسية</button>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function sendIdea() {
+            const category = document.getElementById('category').value;
+            const title = document.getElementById('ideaTitle').value;
+            const description = document.getElementById('ideaDescription').value;
+            const price = document.getElementById('ideaPrice').value;
+            const phone = document.getElementById('phoneNumber').value;
+
+            if (category && title && description && price && phone) {
+                let message = `مرحبا، لدي فكرة جديدة.
+الفئة: ${category}
+العنوان: ${title}
+الوصف: ${description}
+السعر: ${price}
+رقم الهاتف: ${phone}`;
+
+                const whatsappUrl = `https://wa.me/96894774700?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            } else {
+                alert("يرجى ملء جميع الحقول");
+            }
+        }
+    </script>
+</body>
+</html>
