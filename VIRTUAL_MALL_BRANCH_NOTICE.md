@@ -1,0 +1,1 @@
+Virtual Mall development is isolated on branch `virtual-mall-unified-v0.5`. The default branch is not used for the mall release.
