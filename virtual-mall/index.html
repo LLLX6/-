@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d0c0b"><meta name="description" content="Virtual Mall unified role gateway — shopper, merchant and owner">
+<title>Virtual Mall — البوابة الرئيسية</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="portal.css">
+</head>
+<body>
+<main class="portal-shell">
+  <div class="ambient a1"></div><div class="ambient a2"></div><div class="grid"></div>
+  <header class="portal-head">
+    <div class="brand"><span>VM</span><div><b>VIRTUAL MALL</b><small>MUSCAT · SOCIAL COMMERCE WORLD</small></div></div>
+    <div class="release"><i></i><span>UNIFIED EXPERIENCE</span><b>v0.5</b></div>
+  </header>
+  <section class="hero">
+    <div class="eyebrow">ONE WORLD · THREE EXPERIENCES</div>
+    <h1>اختر طريقة دخولك<br><em>إلى العالم التجاري</em></h1>
+    <p>نفس المول، نفس البيانات، ونفس المتاجر — لكن كل دور يفتح أدواته وصلاحياته الخاصة. جميع المداخل مفتوحة حاليًا للنسخة التجريبية.</p>
+  </section>
+  <section class="roles">
+    <article class="role shopper" data-role="shopper" tabindex="0">
+      <div class="role-media"><span class="figure">♟</span><div class="depth"></div><small>IMMERSIVE WORLD</small></div>
+      <div class="role-copy"><div class="num">01</div><h2>متسوق</h2><h3>SHOPPER</h3><p>أنشئ شخصيتك، تجوّل، ادخل المتاجر تلقائيًا، تفاعل مع الموظفين والمنتجات، واستخدم سلة موحدة.</p><div class="chips"><span>3D WORLD</span><span>MOCAP</span><span>SOCIAL</span><span>CART</span></div><button data-enter="shopper">دخول المول <b>←</b></button></div>
+    </article>
+    <article class="role merchant" data-role="merchant" tabindex="0">
+      <div class="role-media"><span class="figure">▦</span><div class="depth"></div><small>STORE OPERATIONS</small></div>
+      <div class="role-copy"><div class="num">02</div><h2>تاجر / مستأجر</h2><h3>MERCHANT</h3><p>اختر متجرك التجريبي، عدّل هويته ومخزونه، تابع طلباته وموظفيه، وشاهد تغييراتك تنعكس على العالم.</p><label class="store-picker"><span>المتجر التجريبي</span><select id="merchantStore"></select></label><button data-enter="merchant">فتح مركز التاجر <b>←</b></button></div>
+    </article>
+    <article class="role owner" data-role="owner" tabindex="0">
+      <div class="role-media"><span class="figure">⌂</span><div class="depth"></div><small>FULL CONTROL</small></div>
+      <div class="role-copy"><div class="num">03</div><h2>مالك المول</h2><h3>OWNER</h3><p>تحكم في الوحدات العشر، الإشغال، Premium، المتاجر، التجارة، الإعلانات والفعاليات وتشغيل العالم.</p><div class="chips"><span>SUPER ADMIN</span><span>UNITS</span><span>ADS</span><span>OPS</span></div><button data-enter="owner">فتح مركز المالك <b>←</b></button></div>
+    </article>
+  </section>
+  <section class="status-strip"><span><i></i> OPEN DEMO — لا توجد كلمة مرور حاليًا</span><span>10 STORES</span><span>GLTF · PBR · NAV AI</span><span>RTL / LTR</span><span>PHONE + DESKTOP</span></section>
+  <footer><span>VIRTUAL MALL PLATFORM</span><p>هذه بوابة تجربة موحّدة. المصادقة الحقيقية وRBAC الإنتاجي يضافان عند الانتقال من Demo إلى Production.</p></footer>
+</main>
+<script src="dashboard-shared.js"></script><script src="portal.js"></script>
+</body></html>
