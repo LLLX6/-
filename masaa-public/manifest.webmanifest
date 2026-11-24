@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "لك في الأرض مسعى",
+  "short_name": "مسعى",
+  "description": "ارحل إلى موضوع حاجتك من القرآن — جهاد بن جمال الهنائي",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f6ee",
+  "theme_color": "#173f39",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
