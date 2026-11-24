@@ -1,0 +1,267 @@
+/* مسعى — الهوية البصرية الجديدة، 2026. لا يغيّر الأسئلة أو محتوى النتائج. */
+@media screen {
+:root {
+  --ink:#183E3A;
+  --moss:#2C625A;
+  --mid:#426C64;
+  --muted:#566E68;
+  --paper:#FFFFFF;
+  --bg:#F5F7F6;
+  --gold:#9D7749;
+  --line:#E0E8E4;
+  --soft:#EFF4F1;
+  --danger:#874934;
+}
+html{scroll-padding-top:85px}
+body{
+  min-width:290px;
+  color:var(--ink);
+  background:
+    radial-gradient(ellipse 75% 35% at 94% 0%,rgba(217,231,224,.38),transparent 74%),
+    linear-gradient(180deg,#F9FAF9 0%,#F5F7F6 55%,#F7F8F6 100%);
+  font-family:'Noto Sans Arabic','Geeza Pro',Tahoma,Arial,sans-serif;
+  font-weight:400;
+  line-height:1.95;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+}
+.top{
+  position:sticky;top:0;z-index:50;
+  max-width:none;height:72px;
+  padding-inline:max(20px,calc((100vw - 1100px)/2));
+  background:rgba(251,253,252,.94);
+  backdrop-filter:blur(18px) saturate(1.18);
+  -webkit-backdrop-filter:blur(18px) saturate(1.18);
+  border-bottom:1px solid rgba(215,226,220,.8);
+  box-shadow:0 5px 20px rgba(12,47,39,.026);
+}
+.top .brand{
+  font-family:'Noto Kufi Arabic','Geeza Pro',Tahoma,sans-serif;
+  font-size:20px;font-weight:800;letter-spacing:-.035em;
+  color:#193F39;
+}
+.top-side{gap:5px}
+.icon-button{
+  min-width:43px;min-height:43px;
+  border-radius:13px;
+  border:1px solid transparent;
+  background:transparent;
+  color:#345E56;
+  transition:background .18s,border-color .18s,transform .18s;
+}
+.icon-button:hover,.icon-button:focus-visible{
+  background:#E9F1ED;border-color:#D4E4DC;color:#1B4D43;
+}
+.icon-button:active{transform:scale(.94)}
+.wrap{max-width:1090px;padding:30px 24px 74px;min-height:calc(100dvh - 72px)}
+.card{background:white;border:1px solid var(--line);border-radius:24px;box-shadow:0 12px 42px rgba(29,65,52,.055)}
+/* غلاف أقرب إلى الطبعات الأدبية المصممة للهاتف، دون زخرفة أو براويز. */
+.cover{
+  position:relative;
+  max-width:1000px;
+  min-height:min(860px,calc(100svh - 110px));
+  border-radius:24px;
+  box-shadow:0 22px 70px rgba(21,54,45,.14);
+  background-position:center 61%;
+  overflow:hidden;
+  isolation:isolate;
+}
+.cover::before,.cover:before{
+  background:linear-gradient(180deg,
+    rgba(251,251,248,.98) 0%,
+    rgba(252,251,246,.96) 18%,
+    rgba(252,250,245,.67) 36%,
+    rgba(252,250,245,.04) 58%,
+    rgba(12,45,40,.36) 78%,
+    rgba(9,33,30,.88) 100%);
+}
+.cover-head{padding:clamp(59px,11vh,110px) 26px 22px}
+.cover-title{
+  font-family:'Amiri','Noto Naskh Arabic','Geeza Pro',serif;
+  font-weight:700;
+  font-size:clamp(49px,8vw,83px);
+  line-height:1.41;
+  letter-spacing:0;
+  color:#153C38;
+  text-shadow:none;
+  max-width:850px;
+  margin:0 auto 14px;
+  text-wrap:balance;
+}
+.cover-sub{
+  font-family:'Noto Kufi Arabic','Geeza Pro',Tahoma,sans-serif;
+  color:#3F6059;
+  font-weight:500;
+  font-size:clamp(13.5px,1.7vw,18px);
+  line-height:1.9;
+  margin:0 auto;
+  letter-spacing:0;
+}
+.cover .author{color:#687C75;font-size:14px;font-weight:500;margin:18px 0 0}
+.cover-foot{gap:12px;padding:20px 34px clamp(43px,8vh,68px)}
+.cover .button{width:min(100%,332px);min-height:57px;box-shadow:0 8px 25px rgba(9,34,31,.14)}
+.cover .light{background:rgba(250,252,251,.97);color:#173F38}
+.cover .secondary{background:rgba(233,239,233,.93);color:#244B44}
+/* أزرار ذات درجات واضحة وتباين مرتفع. */
+.button{
+  border-radius:14px;
+  border:1px solid transparent;
+  min-height:52px;
+  padding:12px 24px;
+  font-family:'Noto Sans Arabic','Geeza Pro',Tahoma,sans-serif;
+  font-weight:700;font-size:calc(15.5px * var(--text-scale));
+  line-height:1.75;
+  letter-spacing:0;
+  transition:transform .18s,background .18s,border-color .18s,box-shadow .18s;
+}
+.button:active{transform:scale(.98)}
+.button.primary,.primary{background:#1D5149;color:white;box-shadow:0 5px 14px rgba(28,70,60,.14)}
+.button.primary:hover,.primary:hover{background:#286457;box-shadow:0 7px 20px rgba(28,70,60,.18)}
+.button.secondary,.secondary{background:#EAF1ED;color:#244E45;border-color:#DCE8E1}
+.button.secondary:hover,.secondary:hover{background:#DEEAE3}
+.button.ghost,.ghost{background:#fff;color:#315B52;border:1px solid #CBDAD2}
+.button.ghost:hover,.ghost:hover{background:#F0F6F2}
+.button.light,.light{background:#fff;color:#254F45}
+/* الأسئلة ومفاتيح الاختيار. */
+.question-page{max-width:820px;min-height:calc(100svh - 165px)}
+.question-top{margin:clamp(28px,5vh,57px) 0 15px}
+.num,.sectiontag,.result-count,.library-num{
+  font-family:'Noto Sans Arabic','Geeza Pro',Tahoma,sans-serif;
+  color:#86673C;font-weight:700;font-size:13px;letter-spacing:0;
+}
+.question-title,.title{
+  font-family:'Noto Kufi Arabic','Geeza Pro',Tahoma,sans-serif;
+  font-weight:700;
+  color:#173E39;
+  letter-spacing:-.02em;
+  text-wrap:balance;
+}
+.question-title{font-size:clamp(27px,3.8vw,43px);line-height:1.65;margin:12px 0 6px}
+.question-desc,.sub{color:var(--muted);line-height:1.9}
+.rail{height:5px;background:#DCE7E0;margin:20px 0 25px;border-radius:100px}
+.rail b{background:linear-gradient(90deg,#70A18E,#286657);border-radius:100px}
+.choicegrid{gap:13px}
+.choice{
+  position:relative;
+  background:#fff;
+  color:#244A43;
+  border:1px solid #DBE5DF;
+  border-right:3px solid #DBE5DF;
+  border-radius:16px;
+  box-shadow:0 5px 18px rgba(25,72,54,.035);
+  min-height:78px;padding:16px 21px;
+  font-family:'Noto Sans Arabic','Geeza Pro',Tahoma,sans-serif;
+  font-size:calc(16px * var(--text-scale));
+  line-height:1.85;font-weight:600;
+  text-align:right;justify-content:flex-start;
+  transition:background .16s,border-color .16s,box-shadow .16s,transform .16s;
+}
+.choice:hover,.choice:focus-visible{background:#F3F8F5;border-color:#AFCAC0;border-right-color:#4C8575;box-shadow:0 7px 21px rgba(22,74,56,.065)}
+.choice:active{transform:scale(.992)}
+.choice-label{line-height:1.85}
+.quizfoot{margin-top:23px}
+.minor{color:var(--muted)}
+/* الصفحات الطويلة والنصوص القرآنية. */
+.paper{
+  position:relative;
+  margin:26px auto 20px;
+  padding:clamp(28px,5vw,58px);
+  border:1px solid #E2EAE5;
+  background:#fff;
+  border-radius:24px;
+  box-shadow:0 15px 55px rgba(25,57,46,.055);
+}
+.title{font-size:clamp(27px,3.9vw,43px);line-height:1.65;margin:8px 0 17px}
+.prose{color:#344E47;line-height:2.15}
+.result-p{
+  color:#304A43;
+  font-family:'Amiri','Noto Naskh Arabic','Geeza Pro',serif;
+  font-size:calc(20px * var(--text-scale));
+  line-height:2.13;
+  font-weight:400;
+  margin:14px 0 22px;
+}
+.bookline{height:2px;width:55px;background:#AD8B5B;margin:18px 0 28px;border-radius:2px}
+.pill,.result-meta .pill,.context-label{
+  background:#EEF4F0;
+  color:#375D53;
+  border:1px solid #D7E6DD;
+  border-radius:100px;
+  padding:8px 15px;
+  font-size:13px;font-weight:600;
+}
+.scripture{
+  background:#F8FAF7;
+  border:1px solid #E5ECE5;
+  border-right:3px solid #B49363;
+  border-radius:13px;
+  padding:23px 24px;
+  margin:25px 0;
+  box-shadow:none;
+}
+.verse{
+  font-family:'Amiri Quran','Amiri','Noto Naskh Arabic','Geeza Pro',serif;
+  color:#214C42;
+  font-size:calc(27px * var(--text-scale));line-height:2.15;
+}
+.ref{color:#866C49;font-weight:600}
+.note{color:#49625A;line-height:2.05}
+.result-nav{gap:12px}
+.result-nav .button{min-height:54px}
+.quote-ending{color:#205045;line-height:1.8}
+.feedback{border-top:1px solid #E2E9E3}
+.library-grid{gap:14px}
+.library-item{
+  background:#fff;
+  border:1px solid #E0E8E2;
+  border-radius:17px;
+  box-shadow:0 7px 28px rgba(25,70,55,.04);
+  padding:20px 21px;
+  min-height:98px;
+  transition:border-color .17s,background .17s,transform .17s;
+}
+.library-item:hover{background:#F5F9F6;border-color:#BDCFBF;transform:translateY(-1px)}
+.library-name{font-family:'Noto Kufi Arabic','Geeza Pro',Tahoma,sans-serif;color:#21463D;font-size:19px;line-height:1.7;font-weight:700}
+.search{background:#fff;border:1px solid #C7D9D0;border-radius:14px;padding:14px 18px;color:#1C4C42}
+.search::placeholder{color:#657C73;opacity:1}
+.safety{background:#FFF8F2;border:1px solid #EAD8C6;border-right:4px solid #AE784F;border-radius:14px;padding:20px 22px;color:#6C4937}
+.footer{border-top:1px solid #E1E9E3;color:#586F66;font-size:12px;padding:17px 22px 28px}
+.toast{background:#204A43;border-radius:14px}
+}
+@media screen and (max-width:660px){
+  .top{height:62px;padding-inline:9px}
+  .top .brand{font-size:17px;letter-spacing:0}
+  .top-side{gap:1px}
+  .icon-button{min-width:40px;min-height:40px;border-radius:11px}
+  .wrap{padding:14px 16px 52px;min-height:calc(100dvh - 62px)}
+  .cover{min-height:calc(100svh - 38px);border-radius:20px;background-position:46% 60%;box-shadow:0 15px 45px rgba(21,51,41,.13)}
+  .cover-head{padding:clamp(56px,9vh,82px) 17px 14px}
+  .cover-title{font-size:clamp(43px,10vw,58px);line-height:1.53;margin-bottom:10px}
+  .cover-sub{font-size:13px;max-width:92%;line-height:1.95}
+  .cover .author{font-size:13px;margin-top:13px}
+  .cover-foot{padding:20px 16px max(36px,env(safe-area-inset-bottom));gap:10px}
+  .cover .button{min-height:55px;max-width:none;font-size:13px;gap:6px;padding:10px 10px}
+  .question-page{min-height:calc(100svh - 125px)}
+  .question-top{margin:25px 0 13px}
+  .question-title{font-size:clamp(28px,7vw,37px);line-height:1.7}
+  .rail{margin:16px 0 22px}
+  .choicegrid,.library-grid{grid-template-columns:1fr;gap:11px}
+  .choice{min-height:64px;padding:13px 17px;border-radius:14px;font-size:calc(15.5px * var(--text-scale))}
+  .paper{margin:12px 0 19px;padding:28px 21px;border-radius:19px}
+  .title{font-size:clamp(27px,7.2vw,34px)}
+  .result-p{font-size:calc(19px * var(--text-scale));line-height:2.03}
+  .scripture{padding:18px 18px;margin:20px 0}
+  .verse{font-size:calc(23px * var(--text-scale))}
+  .library-item{padding:18px 18px;min-height:90px}
+  .result-nav{gap:10px}
+  .result-nav .button{font-size:14px;min-height:52px}
+  .footer{padding-bottom:max(23px,env(safe-area-inset-bottom))}
+}
+@media screen and (max-width:360px){
+  .top{padding-inline:6px}
+  .icon-button{min-width:37px;min-height:39px}
+  .top .brand{font-size:16px}
+  .cover-title{font-size:43px}
+  .cover .button{font-size:12.5px}
+}
+@media screen and (prefers-reduced-motion:reduce){.button,.choice,.icon-button,.library-item{transition:none!important}}
