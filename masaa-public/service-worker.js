@@ -1,4 +1,4 @@
-const CACHE='masaa-site-v2-design-2026-11-24';
+const CACHE='masaa-site-v3-mobile-layout-20261125';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./icon.svg','./theme.css?v=20261124'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('masaa-site-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
